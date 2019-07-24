@@ -1,0 +1,6 @@
+package com.shoppingapp.service;
+
+public class UserServiceImpl {
+	
+
+}

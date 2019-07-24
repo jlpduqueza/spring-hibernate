@@ -1,0 +1,10 @@
+package com.example;
+
+public class PersonInfo {
+
+	private Integer id;
+	private String firstName;
+	private String middileName;
+	private String lastName;
+	
+}

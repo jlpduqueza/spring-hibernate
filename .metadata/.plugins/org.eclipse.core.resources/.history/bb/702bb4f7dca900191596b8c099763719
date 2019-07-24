@@ -1,0 +1,13 @@
+package com.shoppingapp.repository;
+
+import com.shoppingapp.domain.User;
+
+public class UserRepositoryImpl implements UserRepository {
+
+	@Override
+	public User findUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

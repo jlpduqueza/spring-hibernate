@@ -1,0 +1,8 @@
+package com.shoppingapp.repository;
+
+import com.shoppingapp.domain.User;
+
+public interface UserRepository {
+	
+	public User findUser();
+}

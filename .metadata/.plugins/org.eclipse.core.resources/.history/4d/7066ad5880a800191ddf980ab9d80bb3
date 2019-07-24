@@ -1,0 +1,27 @@
+package com.test;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class test {
+
+	public static void main(String[] args) {
+		
+		User user = new User();
+		
+		user.setId(101);
+		user.setUsername("jlpduqueza");
+		user.setPassword("lee123");
+		
+		Configuration con = new Configuration().configure().addAnnotatedClass(User.class);
+		
+		SessionFactory sf = con.buildSessionFactory();
+		
+		Session session = sf.openSession();
+		session.save(user);
+		
+
+	}
+
+}

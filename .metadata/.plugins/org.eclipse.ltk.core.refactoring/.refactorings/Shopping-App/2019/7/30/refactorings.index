@@ -1,0 +1,10 @@
+1563766113923	Move compilation unit
+1563766733403	Rename type 'Person'
+1563766759802	Rename type 'PersonInfo'
+1563767356531	Rename method 'setPersonInfo'
+1563767368827	Rename local variable 'personInfo'
+1563767376270	Rename field 'personInfo'
+1563767550497	Encapsulate field 'userInfo'
+1563779455327	Encapsulate field 'sessionFactory'
+1563780940547	Delete element
+1563879125523	Encapsulate field 'name'

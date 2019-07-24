@@ -1,0 +1,6 @@
+package com.shoppingapp.service;
+
+public interface UserService {
+
+	public Boolean isUserValid();
+}

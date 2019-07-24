@@ -1,0 +1,32 @@
+package com.shoppingapp.repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import org.hibernate.Session;
+
+import com.shoppingapp.domain.User;
+
+public class UserRepositoryImpl implements UserRepository {
+	
+    private Session session;
+    
+    public UserRepositoryImpl(Session session) {
+        this.session = session;
+    }
+	
+	@Override
+	public User findUser(User user) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+	@Override
+	public User findUserByUsername(String username) {
+		
+		System.out.println(session.find(User.class, username));
+		return session.find(User.class, username);
+	}
+
+}

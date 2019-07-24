@@ -1,0 +1,5 @@
+package com.shoppingapp.domain;
+
+public class User {
+
+}

@@ -1,0 +1,23 @@
+<%@page contentType = "text/html;charset = UTF-8" language = "java" %>
+<%@page isELIgnored = "false" %>
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<html>
+   <head>
+      <title>Shopping App</title>
+   </head>
+
+   <body>
+      <table>
+         <tr>
+            <td>Welcome!</td>
+            <%=session.getAttribute("username")%>
+         </tr>
+      </table>  
+
+      <form:form method = "POST" action = "/shopping-app/logout">
+            <input type = "submit" value = "Logout"/>
+      </form:form>
+      
+   </body>
+   
+</html>

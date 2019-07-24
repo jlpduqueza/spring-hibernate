@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/home/training-lee/shopping-spring-hibernate/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1724455496.index
+493846244.index
+2304377896.index
+2560506991.index
+1462719864.index
+3703194086.index
+3156243890.index

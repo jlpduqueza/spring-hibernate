@@ -1,0 +1,21 @@
+package com.shoppingapp.repository;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.shoppingapp.domain.User;
+
+public class UserRepositoryImpl implements UserRepository {
+
+	@Override
+	public User findUser(User user) {
+		
+		Configuration con = new Configuration().configure().addAnnotatedClass(User.class);
+		SessionFactory sf = con.buildSessionFactory();
+		Session session = sf.openSession();
+		
+		return null;
+	}
+
+}

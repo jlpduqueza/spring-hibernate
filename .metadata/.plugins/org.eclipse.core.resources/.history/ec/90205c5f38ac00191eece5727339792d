@@ -1,0 +1,46 @@
+package com.example;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class UserController {
+	
+	public static void main(String[] args) {
+		
+		Configuration con = new Configuration().configure().addAnnotatedClass(User.class);
+		SessionFactory sf = con.buildSessionFactory();
+		Session session = sf.openSession();
+		session.getTransaction().begin();
+		
+		//set user
+		User user = new User();
+		user.setId(002);
+		user.setUsername("jlpduqueza");
+		user.setPassword("lee123");
+		
+		//set userInfo
+		UserInfo userInfo = new UserInfo();
+		userInfo.setFirstName("lee");
+		userInfo.setMiddileName("peralta");
+		userInfo.setLastName("duqueza");
+		
+		//add userinfo to user
+		user.setUserInfo(userInfo);
+		
+		//save user
+		session.save(user);
+		
+		//fetch whole user object
+		User testUser = session.get(User.class, 002);
+		
+		System.out.println("User created : " + testUser.getUserInfo().getFirstName());
+		
+		session.getTransaction().commit();
+		
+		// close the session
+		System.out.println("closing session");
+		session.close();
+		sf.close();
+	}
+}

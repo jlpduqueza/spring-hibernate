@@ -1,0 +1,12 @@
+package com.shoppingapp.repository;
+
+import com.shoppingapp.domain.Login;
+import com.shoppingapp.domain.User;
+
+public interface UserRepository {
+	
+	public User findUser(User user);
+	public User findUserById(int id);
+	public User validateUser(Login login);
+	User findUserByUsernameAndPassword(String username, String password);
+}

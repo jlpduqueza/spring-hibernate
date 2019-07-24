@@ -1,0 +1,6 @@
+package com.shoppingapp.repository;
+
+public interface UserRepository {
+	
+	
+}

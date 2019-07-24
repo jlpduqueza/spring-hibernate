@@ -1,0 +1,51 @@
+package com.example;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class UserController {
+	
+	public static void main(String[] args) {
+		
+//		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+//		HibernateDaoImpl dao = ctx.getBean("hibernateDaoImpl", HibernateDaoImpl.class);
+		
+		Configuration con = new Configuration().configure();
+		SessionFactory sf = con.buildSessionFactory();
+		Session session = sf.openSession();
+		session.getTransaction().begin();
+		
+		//set user
+		User user = new User();
+		user.setId(003);
+		user.setUsername("jlpduqueza");
+		user.setPassword("lee123");
+		
+		//set userInfo
+		UserInfo userInfo = new UserInfo();
+		userInfo.setId(003);
+		userInfo.setFirstName("lee");
+		userInfo.setMiddileName("peralta");
+		userInfo.setLastName("duqueza");
+		
+		//add userinfo to user
+		user.setUserInfo(userInfo);
+		
+		//save user
+		session.save(userInfo);
+		session.save(user);
+		session.getTransaction().commit();
+		//fetch whole user object
+		User testUser = session.get(User.class, 003);
+
+		System.out.println("User created : " + testUser.getUserInfo().getFirstName());
+		
+		// close the session
+		System.out.println("closing session");
+		session.close();
+		sf.close();
+	}
+}

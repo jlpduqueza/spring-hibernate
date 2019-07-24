@@ -1,0 +1,22 @@
+package com.shoppingapp.service;
+
+import org.hibernate.Session;
+
+import com.shoppingapp.repository.UserRepository;
+import com.shoppingapp.repository.UserRepositoryImpl;
+
+public class UserServiceImpl implements UserService{
+
+	private Session session;
+	
+	public UserServiceImpl(Session session) {
+		this.session = session;
+		UserRepository userRepository = new UserRepositoryImpl(session);
+	}
+	
+	@Override
+	public Boolean isUserValid() {
+		
+		return null;
+	}
+}

@@ -1,0 +1,29 @@
+package com.shoppingapp.repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import com.shoppingapp.domain.User;
+
+public class UserRepositoryImpl implements UserRepository {
+	
+    private EntityManager em;
+    
+    public UserRepositoryImpl(EntityManager em) {
+        this.em = em;
+    }
+	
+	@Override
+	public User findUser(User user) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+	@Override
+	public User findUserByUsername(User user) {
+		
+		return null;
+	}
+
+}
